@@ -41,7 +41,7 @@ public void pojoPostRequest() {
 	tags t2=new tags(6,"dog");
 	tags[] t= {t1,t2};
 	JavaUtility ju=new JavaUtility();
-	pojoClass pc=new pojoClass(ju.randomNo(), cp, "dog", url, t, "in stock");
+	pojoClass pc=new pojoClass(ju.randomNo(), cp,null, url, t, "in stock");
 	Response resp= given().body(pc).contentType(ContentType.JSON)
 	.when().post("https://petstore.swagger.io/v2/pet");
 	 int id = resp.jsonPath().get("id");
